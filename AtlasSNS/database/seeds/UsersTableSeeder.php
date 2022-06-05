@@ -13,9 +13,9 @@ class UsersTableSeeder extends Seeder
     {
         //初期ユーザー作成//
         DB::table('users')->insert([
-            ['user' => 'おもち'],
-            ['user' => 'えび'],
-            ['user' => 'ぎょうざ']
+            ['username' => 'おもち'],
+            ['username' => 'えび'],
+            ['username' => 'ぎょうざ']
         ]);
 
     }
