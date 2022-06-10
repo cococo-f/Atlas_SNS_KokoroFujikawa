@@ -2,7 +2,8 @@
 
 @section('content')
 
-{!! Form::open() !!}
+<!-- HTMLフォームを作成する -->
+{!! Form::open([url => '/login']) !!}
 
 <p>AtlasSNSへようこそ</p>
 
