@@ -50,7 +50,7 @@ Route::get('/top','PostsController@index');
 Route::get('/profile','UsersController@profile');
 
 // ユーザー検索 //
-Route::get('/search','UsersController@index');
+Route::get('/search','UsersController@search');
 
 // フォローリスト //
 Route::get('/follow-list','FollowsController@followList');
