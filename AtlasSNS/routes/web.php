@@ -22,7 +22,7 @@
 //ログアウト中のページ
 
 // ログイン画面 //
-Route::get('/login', 'Auth\LoginController@login');
+Route::get('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 
 // ユーザー登録 //
@@ -39,7 +39,11 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 //ログイン中のページ
 
-// トップ //
+
+// ログイン中のユーザーのみ閲覧可能なページの設定 //
+Route::group(['middleware' => 'auth'], function() {
+
+  // トップ //
 Route::get('/top','PostsController@index');
 
 // プロフィール //
@@ -52,3 +56,5 @@ Route::get('/search','UsersController@index');
 Route::get('/follow-list','FollowsController@followList');
 // フォロワーリスト //
 Route::get('/follower-list','FollowsController@followerList');
+
+});
