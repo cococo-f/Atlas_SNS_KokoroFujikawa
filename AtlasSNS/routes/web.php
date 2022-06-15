@@ -20,21 +20,35 @@
 
 
 //ログアウト中のページ
+
+// ログイン画面 //
 Route::get('/login', 'Auth\LoginController@login');
 Route::post('/login', 'Auth\LoginController@login');
 
+// ユーザー登録 //
 Route::get('/register', 'Auth\RegisterController@register');
 Route::post('/register', 'Auth\RegisterController@register');
 
+// 登録完了 //
 Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
 
+// ログアウト //
+Route::get('/logout', 'Auth\LoginController@logout');
+
+
 //ログイン中のページ
+
+// トップ //
 Route::get('/top','PostsController@index');
 
+// プロフィール //
 Route::get('/profile','UsersController@profile');
 
+// ユーザー検索 //
 Route::get('/search','UsersController@index');
 
+// フォローリスト //
 Route::get('/follow-list','FollowsController@followList');
+// フォロワーリスト //
 Route::get('/follower-list','FollowsController@followerList');
