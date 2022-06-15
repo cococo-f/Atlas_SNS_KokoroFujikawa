@@ -1,22 +1,61 @@
 @charset "utf-8";
-html{
-}
-body{
-}
+
+html {}
+
+body {}
+
 /* header */
-header{
-    background:#186AC9;
+header {
+    background: #186AC9;
+}
+
+.follow-list_btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #186AC9;
+    width: 130px;
+    text-align: center;
+    margin: 10px 0px 5px 100px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.follower-list_btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #186AC9;
+    width: 130px;
+    text-align: center;
+    margin: 10px 0px 5px 100px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.search_btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #186AC9;
+    width: 160px;
+    text-align: center;
+    margin: 85px 5px 5px 50px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 20px;
 }
 
 /* main content */
-#row{
+#row {
     display: flex;
     flex-flow: row wrap;
 }
-#container{
+
+#container {
     flex: 0 0 80%;
 }
-#side-bar{
+
+#side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
 }
