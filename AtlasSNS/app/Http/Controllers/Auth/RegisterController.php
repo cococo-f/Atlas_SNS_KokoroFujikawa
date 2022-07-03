@@ -78,7 +78,8 @@ class RegisterController extends Controller
     public function register(Request $request){
         if($request->isMethod('post')){
             $data = $request->input();
-
+            //  セッションを用いてユーザー情報を保存→viewで表示 //
+            //  ここでは取得のgetではなく、保存のput //
              $username = $request->session()->put('username',$data['username']);
 
             $this->create($data);
@@ -88,6 +89,7 @@ class RegisterController extends Controller
     }
 
     public function added(Request $request){
+        // registerメソッドで処理し、addedメソッドは表示のみ //
         return view('auth.added');
     }
 }

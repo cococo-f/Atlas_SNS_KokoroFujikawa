@@ -20,22 +20,25 @@
     <!--OGPタグ/twitterカード-->
 </head>
 <body>
+
     <header>
-        <div id = "head">
+        <div class="menu">
             <!-- リンクと画像設定 -->
-        <h1><a href="/top"><img src="images/atlas.png"></a></h1>
-            <div id="">
-                <div id="">
-                    <p> {{ Session('username') }} さん<img src="images/icon1.png"></p>
-                <div>
-                <ul>
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
+        <h1><a href="/top"><img src="images/atlas.png" alt="AtlasSNSヘッダー画像" class="image1"></a></h1>
+            <input type="checkbox" id="menu_bar01" />
+
+                <label for="menu_bar01">
+                    <p> {{ Session('username') }} さん<img src="images/icon1.png" alt="AtlasSNSアイコン画像" class="image2"></p>
+                </label>
+                <ul id="links01">
+                    <li><a href="/top">HOME</a></li>
+                    <li><a href="/profile">プロフィール編集</a></li>
                     <li><a href="/logout">ログアウト</a></li>
                 </ul>
             </div>
         </div>
     </header>
+
     <div id="row">
         <div id="container">
             @yield('content')
