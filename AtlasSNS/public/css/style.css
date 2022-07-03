@@ -19,7 +19,14 @@ header {
 .image2 {
     width: 60px;
     height: 60px;
-    margin-right: 5px;
+    margin-left: 1130px;
+}
+
+.username {
+    margin-left: 950px;
+    margin-top: 32px;
+    position: absolute;
+    font-size: 20px;
 }
 
 /*アコーディオン全体*/
@@ -40,7 +47,7 @@ header {
     display: block;
     text-decoration: none;
     color: #fff;
-    line-height: 2;
+    line-height: 12px;
     position: relative;
     padding: 10px;
     background-color: #186AC9;

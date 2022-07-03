@@ -28,7 +28,8 @@
             <input type="checkbox" id="menu_bar01" />
 
                 <label for="menu_bar01">
-                    <p> {{ Session('username') }} さん<img src="images/icon1.png" alt="AtlasSNSアイコン画像" class="image2"></p>
+                    <p class="username"> {{ Session('username') }} さん</p>
+                    <img src="images/icon1.png" alt="AtlasSNSアイコン画像" class="image2">
                 </label>
                 <ul id="links01">
                     <li><a href="/top">HOME</a></li>
