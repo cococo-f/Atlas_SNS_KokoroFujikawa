@@ -43,9 +43,6 @@ Route::get('/logout', 'Auth\LoginController@logout');
 // ログイン中のユーザーのみ閲覧可能なページの設定 //
 Route::group(['middleware' => 'auth'], function() {
 
-  // トップ //
-Route::get('/top','PostsController@index');
-
 // プロフィール //
 Route::get('/profile','UsersController@profile');
 
@@ -56,5 +53,11 @@ Route::get('/search','UsersController@search');
 Route::get('/follow-list','FollowsController@followList');
 // フォロワーリスト //
 Route::get('/follower-list','FollowsController@followerList');
+
+  // 投稿画面の表示//
+Route::get('/top','PostsController@index');
+
+// 投稿処理 //
+Route::post('/posts', 'PostsController@store');
 
 });

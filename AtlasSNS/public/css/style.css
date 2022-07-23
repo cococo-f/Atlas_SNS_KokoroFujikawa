@@ -19,7 +19,29 @@ header {
 .image2 {
     width: 60px;
     height: 60px;
-    margin-left: 1130px;
+    margin-left: 1140px;
+}
+
+/* 投稿のユーザーアイコン画像 */
+.image2-post {
+    margin-top: 20px;
+    margin-left: 80px;
+    width: 50px;
+    height: 50px;
+
+}
+
+/* 投稿ボタン */
+.form-button {
+    width: 100px;
+    height: 100px;
+    margin-left: 945px;
+    margin-top: -15px;
+}
+
+/* 区切りの線 */
+.hr1 {
+    border-top: 8px solid #d3d3d3;
 }
 
 .username {
@@ -83,7 +105,7 @@ header {
 
 
 #menu_bar01:checked~#links01 li {
-    height: auto;
+    height: 8px;
     /*開いたときに表示されるliの高さ*/
     opacity: 1;
     background: #fff;
@@ -137,8 +159,6 @@ header {
 }
 
 
-
-
 .follow-list_btn {
     text-decoration: none;
     color: #fff;
@@ -177,6 +197,16 @@ header {
     font-size: 20px;
     z-index: 2;
 }
+
+.form-control {
+    position: absolute;
+    width: 50%;
+    height: 120px;
+    margin-top: 10px;
+    margin-left: 10%;
+}
+
+
 
 /* main content */
 #row {
