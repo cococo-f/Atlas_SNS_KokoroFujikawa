@@ -57,6 +57,7 @@
                <td class="table-text">
                    <div>{{ $post->user_id }}</div>
                </td>
+               <td><a class="btn btn-primary" href="/post/{{$post->id}}/update-form">編集</a></td>
                </tr>
             @endforeach
         </body>

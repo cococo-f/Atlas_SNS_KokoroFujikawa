@@ -13,7 +13,12 @@ class PostsController extends Controller{
     //
     public function index(){
         // 全ての投稿を取得 //
-    $posts = Post::get();
+    // $posts = Post::get();
+
+    $posts = DB::table('posts')
+            ->select('posts.post','posts.created_at','user_id as username')
+            ->join('users', 'username', '=', 'user_id')
+            ->get();
 
     return view('posts.index',[
         'posts'=> $posts
