@@ -60,4 +60,7 @@ Route::get('/top','PostsController@index');
 // 投稿処理 //
 Route::post('/posts', 'PostsController@store');
 
+// 更新処理 //
+Route::post('/update', 'PostsController@update');
+
 });

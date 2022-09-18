@@ -16,7 +16,7 @@ class PostsController extends Controller{
         // 全ての投稿を取得 //
     //  $posts = Post::get();
 
-    // 追記したコード↓
+    // 投稿者の名前を表示↓
     $posts = Post::with('user')->orderBy('created_at', 'desc')->get();
      return view('posts.index',compact('posts'));
     }
@@ -30,6 +30,19 @@ class PostsController extends Controller{
             'post' => $posts,
             'user_id' => $user_id  //ここでログインしているユーザidを登録
               ]);
+
+        return redirect('/top');
+    }
+
+    public function update(Request $request){
+        //更新処理
+        $id = $request->update_id;
+        $up_post = $request->post_update;
+        \DB::table('posts')
+            ->where('id', $id)
+            ->update(
+                ['post' => $up_post]
+            );
 
         return redirect('/top');
     }
