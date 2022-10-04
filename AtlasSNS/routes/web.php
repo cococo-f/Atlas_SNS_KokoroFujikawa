@@ -63,4 +63,6 @@ Route::post('/posts', 'PostsController@store');
 // 更新処理 //
 Route::post('/update', 'PostsController@update');
 
+//削除処理//
+Route::get('/post/{id}/delete', 'PostsController@delete');
 });
