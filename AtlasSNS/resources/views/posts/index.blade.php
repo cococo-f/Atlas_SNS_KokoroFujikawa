@@ -80,7 +80,6 @@
            <a class="js-modal-close" href="">閉じる</a>
         </div>
     </div>
-
         </body>
       </table>
     </div>

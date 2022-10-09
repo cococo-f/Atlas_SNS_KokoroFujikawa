@@ -31,7 +31,7 @@
             <input type="checkbox" id="menu_bar01" />
 
                 <label for="menu_bar01">
-                    <p class="username"> {{ Session('username') }} さん</p>
+                    <p class="username"> {{ Auth::user()->username }} さん</p>
                     <img src="images/icon1.png" alt="AtlasSNSアイコン画像" class="image2">
                 </label>
                 <ul id="links01">
@@ -49,7 +49,7 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p> {{ Session('username') }} さんの</p>
+                <p> {{ Auth::user()->username }} さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>
@@ -60,8 +60,8 @@
                 <p>〇〇名</p>
                 </div>
                 <p class="follower-list_btn"><a href="/follower-list">フォロワーリスト</a></p>
+                 <p class="search_btn"><a href="/search">ユーザー検索</a></p>
             </div>
-            <p class="search_btn"><a href="/search">ユーザー検索</a></p>
         </div>
     </div>
     <footer>
