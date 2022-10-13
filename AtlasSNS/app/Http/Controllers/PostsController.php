@@ -48,11 +48,11 @@ class PostsController extends Controller{
     }
 
      public function delete($id){
-         //削除処理
+         //更新処理
         \DB::table('posts')
             ->where('id', $id)
             ->delete();
 
-        return redirect('/top');
+        return redirect('index');
     }
 }

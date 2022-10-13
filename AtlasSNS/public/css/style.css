@@ -39,9 +39,21 @@ header {
     margin-top: -15px;
 }
 
+
+/* 投稿フォームのレイアウト */
+.form-control {
+    position: absolute;
+    width: 50%;
+    height: 120px;
+    margin-top: 10px;
+    margin-left: 10%;
+}
+
+
 /* 区切りの線 */
 .hr1 {
     border-top: 8px solid #d3d3d3;
+    width: 79vw;
 }
 
 .username {
@@ -185,6 +197,7 @@ header {
     z-index: 2;
 }
 
+/* ユーザー検索の青いボタン */
 .search_btn {
     text-decoration: none;
     color: #fff;
@@ -198,14 +211,48 @@ header {
     z-index: 2;
 }
 
-.form-control {
+/* ユーザー検索フォームのレイアウト */
+.form-group2 {
     position: absolute;
-    width: 50%;
-    height: 120px;
-    margin-top: 10px;
-    margin-left: 10%;
+    margin-top: 45px;
 }
 
+/* フォーム自体 */
+.form-search {
+    width: 300px;
+    height: 40px;
+    margin-left: 5%;
+    margin-bottom: 40px;
+}
+
+/* ユーザー検索ボタン */
+.search-form-button {
+    height: 45px;
+}
+
+/* フォローするボタン */
+.follow-btn {
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #33bbff;
+    width: 10%;
+    text-align: center;
+    padding: 1%;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* フォロー解除ボタン */
+.unfollow-btn {
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #ff1a1a;
+    width: 10%;
+    text-align: center;
+    padding: 1%;
+    border-radius: 8px;
+    font-size: 16px;
+}
 
 
 /* main content */
@@ -221,6 +268,7 @@ header {
 #side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+    height: 100vw;
 }
 
 .content {

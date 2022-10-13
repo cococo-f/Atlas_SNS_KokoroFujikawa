@@ -49,6 +49,10 @@ Route::get('/profile','UsersController@profile');
 // ユーザー検索 //
 Route::get('/search','UsersController@search');
 
+// ユーザー検索結果 //
+
+
+
 // フォローリスト //
 Route::get('/follow-list','FollowsController@followList');
 // フォロワーリスト //
