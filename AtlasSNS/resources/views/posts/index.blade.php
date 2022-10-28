@@ -46,25 +46,27 @@
         <!-- テーブル本体 -->
          <body>
            @foreach ($posts as $post)
-            <!-- <tr> -->
-              <!-- 投稿者名の表示 -->
-               <!-- <td class="table-text"> -->
+
+           <!-- 投稿ユーザーごとの画像表示 -->
+           <p class=""><img src="images/icon3.png" alt="投稿ユーザーアイコン画像" class="post_image"></p>
+
+             <!-- 投稿者名の表示 -->
                    <div>{{ $post->user->username }}</div>
-               <!-- </td> -->
+
 
               <!-- 投稿内容 -->
-               <!-- <td class="table-text"> -->
                  <!-- ↓　47行目asのあとの変数と同一なるように！ ↓-->
                  <!-- 矢印の後はカラム名！！ -->
-                 <div>{{ $post->post }}</div>
-               <!-- </td> -->
-               <div class="content">
+                 <div class="">{{ $post->post }}</div>
+
                  <!-- 投稿の編集ボタン -->
                <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}">
-                 <img src="images/edit.png" alt="編集ボタン"></a></div>
+
+                 <img src="images/edit.png" alt="編集ボタン"></a>
+
                  <!-- 投稿の削除ボタン -->
                  <a class="btn btn-danger" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="images/trash-h.png"></a></div>
-               <!-- </tr> -->
+                </div>
             @endforeach
 
           <!-- モーダルの中身 -->

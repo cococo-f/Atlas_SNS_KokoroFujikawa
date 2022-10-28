@@ -230,6 +230,13 @@ header {
     height: 45px;
 }
 
+/* 検索ワード */
+.search-word {
+    font-size: 23px;
+    font-weight: lighter;
+    margin-left: 25%
+}
+
 /* フォローするボタン */
 .follow-btn {
     text-decoration: none;
@@ -253,6 +260,14 @@ header {
     border-radius: 8px;
     font-size: 16px;
 }
+
+/* 検索画面繰り返し処理の親要素 */
+.search-wrapper {
+    display: flex;
+}
+
+
+
 
 
 /* main content */

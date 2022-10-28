@@ -50,7 +50,7 @@ Route::get('/profile','UsersController@profile');
 Route::get('/search','UsersController@search');
 
 // ユーザー検索結果 //
-
+Route::get('/searchresult','UsersController@searchresult');
 
 
 // フォローリスト //
@@ -58,7 +58,7 @@ Route::get('/follow-list','FollowsController@followList');
 // フォロワーリスト //
 Route::get('/follower-list','FollowsController@followerList');
 
-  // 投稿画面の表示//
+// 投稿画面の表示//
 Route::get('/top','PostsController@index');
 
 // 投稿処理 //
