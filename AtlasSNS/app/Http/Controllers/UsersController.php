@@ -46,4 +46,27 @@ class UsersController extends Controller
 
         return view('users.search', compact('keyword','users'));
     }
+
+
+     public function follow($id){
+        $following_id= Auth::id();
+        // フォロー登録処理 //
+        \DB::table('follows')->insert([
+            'following_id' => $following_id, //フォローする人＝ログインユーザー
+            'followed_id' => $id //フォローされる人＝フォローするボタンを押された人
+              ]);
+
+              return back();
+    }
+
+    public function unfollow($id){
+        $following_id= Auth::id();
+         // フォロー解除処理 //
+        \DB::table('follows')
+            ->where('followed_id', $id)
+            ->where('following_id',$following_id)
+            ->delete();
+//複数の条件をつける場合は->whereを重ねる//
+        return back();
+    }
 }

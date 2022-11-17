@@ -29,15 +29,20 @@
  <!-- ユーザーごとの画像表示 -->
 <a class="btn btn-usericon"><img src="images/icon2.png" alt="ユーザーアイコン画像" class="user_image"></a>
 
-<div>{{ $user->username }}</div>
+<p>{{ $user->username }}</p>
+
 
 <!-- ユーザーごとのフォローする・フォロー解除ボタン -->
-<p class="follow-btn"><a href="/">フォローする</a></p>
-<p class="unfollow-btn"><a href="/">フォロー解除</a></p>
-</div>
+@if (auth()->user()->isFollowing($user->id))
+
+<p class="a"><a href="/unfollow/{{$user->id}}">フォロー解除</a></p>
+
+ @else
+<p class="a"><a href="/follow/{{$user->id}}">フォローする</a></p>
+ @endif
 @endforeach
+ </div>
 
-
-  </div>
+</div>
 </div>
 @endsection

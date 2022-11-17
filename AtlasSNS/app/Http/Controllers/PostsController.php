@@ -17,7 +17,8 @@ class PostsController extends Controller{
     //  $posts = Post::get();
 
     // 投稿者の名前を表示↓
-    $posts = Post::with('user')->orderBy('created_at', 'desc')->get();
+    $posts =Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))->orWhere('user_id', Auth::user()->id)->latest()->get();
+
      return view('posts.index',compact('posts'));
     }
 
@@ -48,7 +49,7 @@ class PostsController extends Controller{
     }
 
      public function delete($id){
-         //更新処理
+         //削除処理
         \DB::table('posts')
             ->where('id', $id)
             ->delete();

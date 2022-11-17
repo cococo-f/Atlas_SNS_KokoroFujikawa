@@ -52,6 +52,12 @@ Route::get('/search','UsersController@search');
 // ユーザー検索結果 //
 Route::get('/searchresult','UsersController@searchresult');
 
+// フォローする処理 //
+Route::get('/follow/{id}', 'UsersController@follow');
+
+// フォロー解除処理 //
+Route::get('/unfollow/{id}', 'UsersController@unfollow');
+
 
 // フォローリスト //
 Route::get('/follow-list','FollowsController@followList');
@@ -62,11 +68,12 @@ Route::get('/follower-list','FollowsController@followerList');
 Route::get('/top','PostsController@index');
 
 // 投稿処理 //
-Route::post('/posts', 'PostsController@store');
+Route::post('/posts','PostsController@store');
 
-// 更新処理 //
+// 投稿更新処理 //
 Route::post('/update', 'PostsController@update');
 
-//削除処理//
+//投稿削除処理//
 Route::get('/post/{id}/delete', 'PostsController@delete');
+
 });
