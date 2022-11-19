@@ -18,6 +18,7 @@ class PostsController extends Controller{
 
     // 投稿者の名前を表示↓
     $posts =Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))->orWhere('user_id', Auth::user()->id)->latest()->get();
+    //フォローしている人と自分の投稿//
 
      return view('posts.index',compact('posts'));
     }
