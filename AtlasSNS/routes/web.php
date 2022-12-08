@@ -76,4 +76,7 @@ Route::post('/update', 'PostsController@update');
 //投稿削除処理//
 Route::get('/post/{id}/delete', 'PostsController@delete');
 
+//プロフィール更新//
+Route::post('/profile-update', 'UsersController@ProfileUpdate');
+
 });

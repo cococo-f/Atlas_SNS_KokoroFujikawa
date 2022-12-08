@@ -37,7 +37,7 @@ class PostsController extends Controller{
     }
 
     public function update(Request $request){
-        //更新処理
+        //投稿内容の更新処理
         $id = $request->update_id;
         $up_post = $request->post_update;
         \DB::table('posts')
@@ -50,7 +50,7 @@ class PostsController extends Controller{
     }
 
      public function delete($id){
-         //削除処理
+         //投稿内容の削除処理
         \DB::table('posts')
             ->where('id', $id)
             ->delete();

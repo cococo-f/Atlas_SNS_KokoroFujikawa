@@ -69,4 +69,17 @@ class UsersController extends Controller
 //複数の条件をつける場合は->whereを重ねる//
         return back();
     }
+
+    public function ProfileUpdate(Request $request){
+        $user= Auth::user();
+
+        $user->update([
+            // 'username' => $request->input('username'),
+            // 'mail' => $request->input('mail'),
+            // 'password' => bcrypt($request->input('newpassword')),
+            'bio' => $request->input('bio'),
+             ]);
+
+             return redirect('/top');
+    }
 }
