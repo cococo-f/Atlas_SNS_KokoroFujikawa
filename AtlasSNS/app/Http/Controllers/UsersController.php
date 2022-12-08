@@ -74,9 +74,9 @@ class UsersController extends Controller
         $user= Auth::user();
 
         $user->update([
-            // 'username' => $request->input('username'),
-            // 'mail' => $request->input('mail'),
-            // 'password' => bcrypt($request->input('newpassword')),
+            'username' => $request->input('username'),
+            'mail' => $request->input('mail'),
+            'password' => bcrypt($request->input('newpassword')),
             'bio' => $request->input('bio'),
              ]);
 
