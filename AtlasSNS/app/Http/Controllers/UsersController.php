@@ -72,13 +72,11 @@ class UsersController extends Controller
 
     public function ProfileUpdate(Request $request){
         $user= Auth::user();
-
-        $user->update([
-            'username' => $request->input('username'),
-            'mail' => $request->input('mail'),
-            'password' => bcrypt($request->input('newpassword')),
-            'bio' => $request->input('bio'),
-             ]);
+        $user->username =$request->username;
+        $user->mail =$request->mail;
+        $user->password =$request->password;
+        $user->bio =$request->bio;
+        $user->save();
 
              return redirect('/top');
     }
