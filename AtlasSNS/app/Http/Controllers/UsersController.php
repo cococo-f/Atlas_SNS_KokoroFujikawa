@@ -71,10 +71,13 @@ class UsersController extends Controller
     }
 
     public function ProfileUpdate(Request $request){
+        // dd($request);
+
         $user= Auth::user();
         $user->username =$request->username;
+        // $user->update([～で記述するとエラーがでてbioが更新できなかったため、その記述は避ける
         $user->mail =$request->mail;
-        $user->password =$request->password;
+        $user->password =bcrypt($request->newpassword);
         $user->bio =$request->bio;
         $user->save();
 
