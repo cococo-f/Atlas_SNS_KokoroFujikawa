@@ -2,7 +2,7 @@
 
 @section('content')
 
-<img src="{{ asset('storage/images/' .auth()->user()->images) }}">
+<img src="{{ asset('storage/'.auth()->user()->images) }}">
 
 <form action="{{ url('profile-update') }}" enctype="multipart/form-data" method="post">
 @csrf
@@ -26,6 +26,7 @@
 
 <p>icon image</p>
 <input type="file" name="iconimage">
+
 </div>
 
 <input type="submit" name="profileupdate" value="更新">

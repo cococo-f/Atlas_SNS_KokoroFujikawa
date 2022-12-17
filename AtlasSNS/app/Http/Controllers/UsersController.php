@@ -71,16 +71,22 @@ class UsersController extends Controller
     }
 
     public function ProfileUpdate(Request $request){
-        // dd($request);
-
         $user= Auth::user();
+
+        $filename=$request->iconimage->getClientOriginalName();
+        $img=$request->iconimage->storeAs('',$filename);
+
         $user->username =$request->username;
         // $user->update([～で記述するとエラーがでてbioが更新できなかったため、その記述は避ける
         $user->mail =$request->mail;
         $user->password =bcrypt($request->newpassword);
+        // ↑name属性（newpassword）に気を付ける！ddメソッドで確認！
         $user->bio =$request->bio;
+        $user->images=$img;
         $user->save();
 
              return redirect('/top');
     }
+
+
 }
