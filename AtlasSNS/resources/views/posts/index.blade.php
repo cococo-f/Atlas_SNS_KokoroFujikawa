@@ -15,7 +15,7 @@
         <div class="col-sm-6">
           <input type="text" name="post_content" class="form-control"
           placeholder="投稿内容を入力してください">
-          <img src="images/icon1.png" alt="AtlasSNSアイコン画像2" class="image2-post">
+          <img src="{{ asset('storage/'.Auth::user()->images) }}" alt="AtlasSNSアイコン画像2" class="image2-post">
         </div>
       </div>
 
@@ -55,7 +55,7 @@
 
 
               <!-- 投稿内容 -->
-                 <!-- ↓　47行目asのあとの変数と同一なるように！ ↓-->
+                 <!-- ↓ ＠foreachのasのあとの変数と同一なるように！ ↓-->
                  <!-- 矢印の後はカラム名！！ -->
                  <div class="">{{ $post->post }}</div>
 

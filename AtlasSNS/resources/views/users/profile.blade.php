@@ -2,7 +2,7 @@
 
 @section('content')
 
-<img src="{{ asset('storage/'.auth()->user()->images) }}">
+<img src="{{ asset('storage/'.Auth::user()->images) }}">
 
 <form action="{{ url('profile-update') }}" enctype="multipart/form-data" method="post">
 @csrf

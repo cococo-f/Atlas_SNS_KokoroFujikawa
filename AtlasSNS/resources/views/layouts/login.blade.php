@@ -27,12 +27,12 @@
     <header>
         <div class="menu">
             <!-- リンクと画像設定 -->
-        <h1><a href="/top"><img src="images/atlas.png" alt="AtlasSNSヘッダー画像" class="image1"></a></h1>
+        <p><a href="/top"><img src="images/atlas.png" alt="AtlasSNSヘッダー画像" class="image1"></a></p>
             <input type="checkbox" id="menu_bar01" />
 
                 <label for="menu_bar01">
                     <p class="username"> {{ Auth::user()->username }} さん</p>
-                    <img src="images/icon1.png" alt="AtlasSNSアイコン画像" class="image2">
+                    <img src="{{ asset('storage/'.Auth::user()->images) }}" alt="AtlasSNSアイコン画像" class="image2">
                 </label>
                 <ul id="links01">
                     <li><a href="/top">HOME</a></li>

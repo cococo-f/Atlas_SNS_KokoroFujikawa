@@ -17,9 +17,10 @@ header {
 }
 
 .image2 {
-    width: 60px;
-    height: 60px;
-    margin-left: 1140px;
+    width: 50px;
+    height: 50px;
+    margin-left: 94%;
+    margin-top: 1%;
 }
 
 /* 投稿のユーザーアイコン画像 */
@@ -57,7 +58,7 @@ header {
 }
 
 .username {
-    margin-left: 950px;
+    margin-left: 860px;
     margin-top: 32px;
     position: absolute;
     font-size: 20px;

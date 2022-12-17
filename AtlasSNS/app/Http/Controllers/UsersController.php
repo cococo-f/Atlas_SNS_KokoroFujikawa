@@ -73,8 +73,13 @@ class UsersController extends Controller
     public function ProfileUpdate(Request $request){
         $user= Auth::user();
 
+
+        if(!empty($request->iconimage)) {
+
         $filename=$request->iconimage->getClientOriginalName();
-        $img=$request->iconimage->storeAs('',$filename);
+        // ファイルについていた元々の名前をそのまま付ける
+        $img=$request->iconimage->storeAs('',$filename,'public');
+        // それをstoreAsの引数に突っ込む
 
         $user->username =$request->username;
         // $user->update([～で記述するとエラーがでてbioが更新できなかったため、その記述は避ける
@@ -83,7 +88,9 @@ class UsersController extends Controller
         // ↑name属性（newpassword）に気を付ける！ddメソッドで確認！
         $user->bio =$request->bio;
         $user->images=$img;
+        // ファイル名を付け終わったものを表示させたいため$requestではなく$img
         $user->save();
+        }
 
              return redirect('/top');
     }
