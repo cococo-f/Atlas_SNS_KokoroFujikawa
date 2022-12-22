@@ -48,7 +48,7 @@
            @foreach ($posts as $post)
 
            <!-- 投稿ユーザーごとの画像表示 -->
-           <p class=""><img src="images/icon3.png" alt="投稿ユーザーアイコン画像" class="post_image"></p>
+           <img src="{{ asset('/storage/'.$post->user->images) }}" alt="投稿ユーザーアイコン画像" class="image7">
 
              <!-- 投稿者名の表示 -->
                    <div>{{ $post->user->username }}</div>
@@ -59,6 +59,7 @@
                  <!-- 矢印の後はカラム名！！ -->
                  <div class="">{{ $post->post }}</div>
 
+                 @if (Auth::user()->id == $post->user->id)
                  <!-- 投稿の編集ボタン -->
                <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}">
 
@@ -66,6 +67,8 @@
 
                  <!-- 投稿の削除ボタン -->
                  <a class="btn btn-danger" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="images/trash-h.png"></a></div>
+                 @endif
+
                 </div>
             @endforeach
 
