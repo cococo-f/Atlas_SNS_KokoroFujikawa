@@ -20,7 +20,7 @@ class UsersController extends Controller
 
     public function search(){
         // 全てのユーザーを取得 //
-         $users = \DB::table('users')-> get();
+         $users = \DB::table('users')->get();
         return view('users.search', ['users'=> $users]);
     }
 

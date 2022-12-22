@@ -29,7 +29,6 @@ class FollowsController extends Controller
 
 
 
-
     public function followerList(){
          $posts = Post::query()->whereIn('user_id', Auth::user()->followers()->pluck('following_id'))->latest()->get();
          //followers→リレーションのfollowersメソッド//
@@ -43,4 +42,5 @@ class FollowsController extends Controller
 
         return view('follows.followerList',['posts'=>$posts,'images'=>$images]);
     }
+
 }
