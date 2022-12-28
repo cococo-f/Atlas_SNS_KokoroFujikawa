@@ -79,4 +79,7 @@ Route::get('/post/{id}/delete', 'PostsController@delete');
 //プロフィール更新//
 Route::post('/profile-update', 'UsersController@ProfileUpdate');
 
+// 他ユーザーのプロフィール表示 //
+Route::get('/usersProfile/{id}', 'UsersController@usersProfile');
+
 });

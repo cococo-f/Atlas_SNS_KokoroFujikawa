@@ -46,14 +46,14 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'username' => 'required|string|max:255',
-            'mail' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:4|confirmed',
+
+    protected function validator(array $data){
+        $validator = Validator::make($data, [
+            'username' => 'required|string|between:2,12',
+            'mail' => 'required|string|email|between:5,40|unique:users',
+            'password' => 'required|string|between:8,20|confirmed',
         ]);
-    }
+}
 
     /**
      * Create a new user instance after a valid registration.
@@ -78,9 +78,19 @@ class RegisterController extends Controller
     public function register(Request $request){
         if($request->isMethod('post')){
             $data = $request->input();
-            //  セッションを用いてユーザー情報を保存→viewで表示 //
-            //  ここでは取得のgetではなく、保存のput //
+
+            $validator = $this->validator($data);
+            //$validatorの中身はvalidatorメソッド//
+
+            if($validator->fails()){
+            return redirect()->back()
+            ->withInput()
+            ->withErrors($validator);
+        }
+
              $username = $request->session()->put('username',$data['username']);
+             //  セッションを用いてユーザー情報を保存→viewで表示 //
+            //  ここでは取得のgetではなく、保存のput //
 
             $this->create($data);
             return redirect('added');

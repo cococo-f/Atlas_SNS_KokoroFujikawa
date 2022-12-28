@@ -3,8 +3,7 @@
 @section('content')
 <div class="card-body">
    <div class="card-title">
-     </div>
-
+</div>
     <!-- 投稿フォーム -->
     @if( Auth::check())
     <form action="{{ url('posts') }}" method="POST" class="form-horizontal">
@@ -42,7 +41,6 @@
           <th>投稿一覧</th>
           <th> </th>
           </head>
-
         <!-- テーブル本体 -->
          <body>
            @foreach ($posts as $post)
@@ -60,6 +58,7 @@
                  <div class="">{{ $post->post }}</div>
 
                  @if (Auth::user()->id == $post->user->id)
+                 <!-- ↑if文を使ってログインユーザーのみ投稿・編集ボタンが表示されるように記述 -->
                  <!-- 投稿の編集ボタン -->
                <a class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}">
 
@@ -68,7 +67,6 @@
                  <!-- 投稿の削除ボタン -->
                  <a class="btn btn-danger" href="/post/{{$post->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="images/trash-h.png"></a></div>
                  @endif
-
                 </div>
             @endforeach
 

@@ -189,6 +189,11 @@ header {
     z-index: 2;
 }
 
+.followlist_text {
+    font-size: 150%;
+    margin: 15px 0px 15px 70px;
+}
+
 .follower-list_btn {
     text-decoration: none;
     color: #fff;
@@ -200,6 +205,11 @@ header {
     border-radius: 8px;
     font-size: 16px;
     z-index: 2;
+}
+
+.followerlist_text {
+    font-size: 150%;
+    margin: 15px 0px 15px 70px;
 }
 
 /* ユーザー検索の青いボタン */

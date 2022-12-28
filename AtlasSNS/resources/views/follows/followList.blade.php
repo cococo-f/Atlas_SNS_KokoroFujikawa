@@ -10,7 +10,7 @@
 
 <hr class="hr1">
 @foreach ($posts as $post)
-<img src="{{ asset('/storage/'.$post->user->images) }}" alt="フォローリスト一覧投稿ユーザー画像" class="image5">
+<diV><img src="{{ asset('/storage/'.$post->user->images) }}" alt="フォローリスト一覧投稿ユーザー画像" class="image5"></diV>
  <div>{{ $post->user->username }}</div>
 
 
