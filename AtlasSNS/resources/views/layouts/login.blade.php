@@ -27,7 +27,7 @@
     <header>
         <div class="menu">
             <!-- リンクと画像設定 -->
-        <p><a href="/top"><img src="images/atlas.png" alt="AtlasSNSヘッダー画像" class="image1"></a></p>
+        <p><a href="/top"><img src="{{ asset('images/atlas.png') }}" alt="AtlasSNSヘッダー画像" class="image1"></a></p>
             <input type="checkbox" id="menu_bar01" />
 
                 <label for="menu_bar01">

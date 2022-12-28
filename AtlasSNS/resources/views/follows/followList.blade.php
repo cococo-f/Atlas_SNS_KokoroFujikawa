@@ -4,7 +4,8 @@
 <h1 class="followlist_text">FollowList</h1>
 @foreach($images as $images)
 <!-- ↑コントローラーでgetで値を取得する際、コレクションを単体として扱うとエラーが表示される。foreachなどを使って、要素をひとつずつ取り出して処理することで解消される。 -->
-<a href="/top"><img src="{{ asset('/storage/'.$images->images) }}" alt="フォローリスト一覧ユーザー画像" class="image3"></a>
+<a href="/usersProfile/{{$images->id}}"><img src="{{ asset('/storage/'.$images->images) }}" alt="フォローリスト一覧ユーザー画像" class="image3"></a>
+<!-- アイコン画像のリンクに変数imagesからidを引っぱってくる -->
 
 @endforeach
 
