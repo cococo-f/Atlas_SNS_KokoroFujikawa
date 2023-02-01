@@ -2,11 +2,9 @@
 
 @section('content')
 
-@foreach ($errors->all() as $error)
-  <li>{{$error}}</li>
-@endforeach
 
 <img src="{{ asset('storage/'.Auth::user()->images) }}">
+
 
 <form action="{{ url('profile-update') }}" enctype="multipart/form-data" method="post">
 @csrf
@@ -16,22 +14,75 @@
 <p>username</p>
 <input type="text" name="username" value="{{ Auth::user()->username }}">
 
-<input type="hidden" name="id" value="{{ Auth::user()->id }}">
+@if ($errors->has('username'))
+<tr>
+  @foreach($errors->get('username') as $message)
+  <td> {{ $message }} </td>
+  @endforeach
+</tr>
+@endif
+
 
 <p>mail address</p>
 <input type="text" name="mail" value="{{ Auth::user()->mail }}">
 
+@if ($errors->has('mail'))
+<tr>
+  @foreach($errors->get('mail') as $message)
+  <td> {{ $message }} </td>
+  @endforeach
+</tr>
+@endif
+
+
 <p>password</p>
-<input type="password" name="newpassword" value="">
+<input type="password" name="password" value="">
+
+@if ($errors->has('password'))
+<tr>
+  @foreach($errors->get('password') as $message)
+  <td> {{ $message }} </td>
+  @endforeach
+</tr>
+@endif
+
 
 <p>password confirm</p>
 <input type="password" name="newpassword_confirmation">
 
+@if ($errors->has('password-confirm'))
+<tr>
+  @foreach($errors->get('password-confirm') as $message)
+  <td> {{ $message }} </td>
+  @endforeach
+</tr>
+@endif
+
+
+
 <p>bio</p>
 <input type="text" name="bio" value="{{ Auth::user()->bio }}">
 
+@if ($errors->has('bio'))
+<tr>
+  @foreach($errors->get('bio') as $message)
+  <td> {{ $message }} </td>
+  @endforeach
+</tr>
+@endif
+
+
 <p>icon image</p>
 <input type="file" name="iconimage">
+
+@if ($errors->has('iconimage'))
+<tr>
+  @foreach($errors->get('iconimage') as $message)
+  <td> {{ $message }} </td>
+  @endforeach
+</tr>
+@endif
+
 
 </div>
 
