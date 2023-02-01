@@ -2,6 +2,10 @@
 
 @section('content')
 
+@foreach ($errors->all() as $error)
+  <li>{{$error}}</li>
+@endforeach
+
 <img src="{{ asset('storage/'.Auth::user()->images) }}">
 
 <form action="{{ url('profile-update') }}" enctype="multipart/form-data" method="post">
@@ -11,6 +15,8 @@
 
 <p>username</p>
 <input type="text" name="username" value="{{ Auth::user()->username }}">
+
+<input type="hidden" name="id" value="{{ Auth::user()->id }}">
 
 <p>mail address</p>
 <input type="text" name="mail" value="{{ Auth::user()->mail }}">

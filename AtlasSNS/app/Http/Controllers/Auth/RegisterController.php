@@ -86,7 +86,8 @@ class RegisterController extends Controller
             return redirect()->back()
             ->withInput()
             ->withErrors($validator);
-        }
+            }
+            //もしバリデーションに引っかかった場合は元の画面に戻る//
 
              $username = $request->session()->put('username',$data['username']);
              //  セッションを用いてユーザー情報を保存→viewで表示 //

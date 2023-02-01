@@ -8,6 +8,7 @@ use App\Post;
 use Auth;
 use Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
 
 class UsersController extends Controller
@@ -70,10 +71,30 @@ class UsersController extends Controller
         return back();
     }
 
+    protected function validator(array $data){
+        return Validator::make($data, [
+            'username' => 'required|string|between:2,12',
+            'mail' => ['required','string','email','between:5,40',Rule::unique('users')->ignore($data->id,'id'),],
+            'password' => 'string|alpha_num|between:8,20|confirmed',
+            'bio' => 'max:150',
+            'iconimage' => 'alpha_num|mimes:jpg,png,bmp,gif,svg',
+        ]);
+}
+
     public function ProfileUpdate(Request $request){
         $user= Auth::user();
+        $data = $request->input();
+        $validator = $this->validator($data);
 
         if(!empty($request->iconimage)) {
+        //もしアイコン画像が入力された場合//
+
+        if($validator->fails()){
+        return redirect()->back()
+        ->withInput()
+        ->withErrors($validator);
+        }
+        //もしバリデーションに引っかかった場合は元の画面に戻る//
 
         $filename=$request->iconimage->getClientOriginalName();
         // ファイルについていた元々の名前をそのまま付ける
@@ -82,6 +103,13 @@ class UsersController extends Controller
         $user->images=$img;
         // ファイル名を付け終わったものを表示させたいため$requestではなく$img
         }
+
+        if($validator->fails()){
+        return redirect()->back()
+        ->withInput()
+        ->withErrors($validator);
+        }
+        //もしバリデーションに引っかかった場合は元の画面に戻る//
 
         $user->username =$request->username;
         // $user->update([～で記述するとエラーがでてbioが更新できなかったため、その記述は避ける
@@ -92,7 +120,7 @@ class UsersController extends Controller
 
         $user->save();
 
-             return redirect('/top');
+        return redirect('/top');
     }
 
 
