@@ -75,7 +75,7 @@ class UsersController extends Controller
         return Validator::make($data, [
             'username' => 'required|string|between:2,12',
             'mail' => 'required|string|email|between:5,40|unique:users',
-            'password' => 'string|alpha_num|between:8,20|confirmed',
+            'password' => 'alpha_num|between:8,20|confirmed',
             'bio' => 'max:150',
             'iconimage' => 'alpha_num|mimes:jpg,png,bmp,gif,svg',
         ]);
