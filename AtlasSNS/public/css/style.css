@@ -58,7 +58,7 @@ header {
 }
 
 .username {
-    margin-left: 860px;
+    margin-left: 80%;
     margin-top: 32px;
     position: absolute;
     font-size: 20px;
@@ -280,8 +280,6 @@ header {
 .search-wrapper {
     display: flex;
 }
-
-
 
 
 

@@ -125,11 +125,14 @@ class UsersController extends Controller
 
 
     public function usersProfile($id){
-        $user = DB::table('users')
-        ->leftJoin('posts', 'users.id', '=', 'posts.user_id')
-        ->where( 'users.id', '=' , $id )
-        ->get();
+        $user=User::where('id',$id)->first();
+        //取得するidはひとりだからgetやallではなくfirst//
 
-         return view('users.usersProfile',['user'=>$user]);
+        $images=User::where('id',$id);
+        $posts=Post::where('user_id',$id)->get();
+        //ユーザー情報と投稿情報をテーブル結合しなくても別々で取得できる//
+
+
+         return view('users.usersProfile',['user'=>$user,'images'=>$images,'posts'=>$posts]);
     }
 }

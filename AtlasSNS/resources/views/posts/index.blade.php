@@ -56,6 +56,7 @@
                  <!-- ↓ ＠foreachのasのあとの変数と同一なるように！ ↓-->
                  <!-- 矢印の後はカラム名！！ -->
                  <div class="">{{ $post->post }}</div>
+                 <p class="">{{ $post->updated_at}}</p>
 
                  @if (Auth::user()->id == $post->user->id)
                  <!-- ↑if文を使ってログインユーザーのみ投稿・編集ボタンが表示されるように記述 -->

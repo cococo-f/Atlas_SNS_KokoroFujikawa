@@ -15,6 +15,7 @@
  <div>{{ $post->user->username }}</div>
 
   <div class="">{{ $post->post }}</div>
+  <p class="">{{ $post->updated_at}}</p>
 
  @endforeach
 @endsection
