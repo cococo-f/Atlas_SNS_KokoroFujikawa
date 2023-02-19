@@ -56,7 +56,7 @@ Route::get('/searchresult','UsersController@searchresult');
 Route::get('/follow/{id}', 'UsersController@follow');
 
 // フォロー解除処理 //
-Route::get('/unfollow/{id}', 'UsersController@unfollow');
+Route::get('/unFollow/{id}', 'UsersController@unFollow');
 
 
 // フォローリスト //

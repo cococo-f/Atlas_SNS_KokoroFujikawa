@@ -27,7 +27,7 @@
  <div class="search-wrapper">
 
  <!-- ユーザーごとの画像表示 -->
-<div class="btn btn-usericon"><img src="images/icon2.png" alt="ユーザーアイコン画像" class="user_image"></div>
+<div class="btn btn-usericon"><img src="{{ asset('/storage/'.$user->images) }}" alt="検索ユーザーアイコン画像" class="image10"></div>
 
 <div>{{ $user->username }}</div>
 
@@ -35,10 +35,10 @@
 <!-- ユーザーごとのフォローする・フォロー解除ボタン -->
 @if (auth()->user()->isFollowing($user->id))
 
-<div class="a"><a href="/unfollow/{{$user->id}}">フォロー解除</a></div>
+<div class="unFollow-btn"><a href="/unfollow/{{$user->id}}">フォロー解除</a></div>
 
  @else
-<div class="a"><a href="/follow/{{$user->id}}">フォローする</a></div>
+<div class="follow-btn"><a href="/follow/{{$user->id}}">フォローする</a></div>
  @endif
 @endforeach
  </div>

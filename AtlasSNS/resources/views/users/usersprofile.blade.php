@@ -10,7 +10,16 @@
 <div class="">bio </div>
 <div class="">{{ $user->bio}}</div>
 
+@if (auth()->user()->isFollowing($user->id))
+<div class="unFollow-btn"><a href="/unFollow/{{$user->id}}">フォロー解除</a></div>
+<!-- もしフォローしていたらフォロー解除ボタンを表示 -->
+ @else
+<div class="follow-btn"><a href="/follow/{{$user->id}}">フォローする</a></div>
+<!-- もしフォローしていなかったらフォローするボタンを表示 -->
+ @endif
+
 </div>
+
 
 <hr class="hr1">
 

@@ -265,7 +265,7 @@ header {
 }
 
 /* フォロー解除ボタン */
-.unfollow-btn {
+.unFollow-btn {
     text-decoration: none;
     color: #FFFFFF;
     background-color: #ff1a1a;
