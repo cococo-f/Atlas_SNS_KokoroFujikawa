@@ -75,7 +75,7 @@ class UsersController extends Controller
     protected function validator(array $data){
         return Validator::make($data, [
             'username' => 'required|string|between:2,12',
-            'mail' => 'required|string|email|between:5,40|unique:users',
+            'mail' => ['required','string','email','between:5,40',Rule::unique('users')->ignore($data['mail'],'mail'),],
             'password' => 'alpha_num|between:8,20|confirmed',
             'bio' => 'max:150',
             'iconimage' => 'alpha_num|mimes:jpg,png,bmp,gif,svg',
