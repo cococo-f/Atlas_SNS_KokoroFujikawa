@@ -14,7 +14,15 @@
         <div class="col-sm-6">
           <input type="text" name="post_content" class="form-control"
           placeholder="投稿内容を入力してください">
+
+          @if(Auth::user()->images == 'dawn.png')
+                    <img src="{{ asset('storage/icon1.png') }}" alt="AtlasSNSアイコン画像2" class="image2-post">
+
+                    @else
           <img src="{{ asset('storage/'.Auth::user()->images) }}" alt="AtlasSNSアイコン画像2" class="image2-post">
+          @endif
+
+
         </div>
       </div>
 

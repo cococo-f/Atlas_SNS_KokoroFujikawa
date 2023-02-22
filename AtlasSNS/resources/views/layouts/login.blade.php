@@ -32,7 +32,14 @@
 
                 <label for="menu_bar01">
                     <p class="username"> {{ Auth::user()->username }} さん</p>
+
+                    @if(Auth::user()->images == 'dawn.png')
+                    <img src="{{ asset('storage/icon1.png') }}" alt="AtlasSNSアイコン画像" class="image2">
+
+                    @else
                     <img src="{{ asset('storage/'.Auth::user()->images) }}" alt="AtlasSNSアイコン画像" class="image2">
+                    @endif
+
                 </label>
                 <ul id="links01">
                     <li><a href="/top">HOME</a></li>

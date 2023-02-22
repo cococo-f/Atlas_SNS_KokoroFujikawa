@@ -2,9 +2,14 @@
 
 @section('content')
 
+@if(Auth::user()->images == 'dawn.png')
+<div class="profile-updateIcon">
+  <img src="{{ asset('storage/icon1.png') }}" alt="AtlasSNSアイコン画像3" class="image2">
 
-<img src="{{ asset('storage/'.Auth::user()->images) }}">
-
+   @else
+    <img src="{{ asset('storage/'.Auth::user()->images) }}" alt="AtlasSNSアイコン画像3" class="image2">
+</div>
+@endif
 
 <form action="{{ url('profile-update') }}" enctype="multipart/form-data" method="post">
 @csrf
