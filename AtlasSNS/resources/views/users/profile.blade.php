@@ -48,11 +48,11 @@
 
 
 <p>password confirm</p>
-<input type="password" name="newpassword_confirmation">
+<input type="password" name="password_confirmation">
 
-@if ($errors->has('password-confirm'))
+@if ($errors->has('password_confirmation'))
 <tr>
-  @foreach($errors->get('password-confirm') as $message)
+  @foreach($errors->get('password_confirmation') as $message)
   <td> {{ $message }} </td>
   @endforeach
 </tr>

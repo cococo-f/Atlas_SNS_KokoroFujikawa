@@ -42,11 +42,11 @@
 
 
 {{ Form::label('パスワード確認') }}
-{{ Form::password('password-confirm',['class' => 'input']) }}
+{{ Form::password('password_confirmation',['class' => 'input']) }}
 
-@if ($errors->has('password-confirm'))
+@if ($errors->has('password_confirmation'))
 <tr>
-  @foreach($errors->get('password-confirm') as $message)
+  @foreach($errors->get('password_confirmation') as $message)
   <td> {{ $message }} </td>
   @endforeach
 </tr>

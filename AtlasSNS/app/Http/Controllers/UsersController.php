@@ -20,10 +20,11 @@ class UsersController extends Controller
 
 
     public function search(){
-        // 全てのユーザーを取得 //
-         $users = \DB::table('users')->get();
+        // whereで条件指定し、ログインユーザー以外を取得 //
+         $users = \DB::table('users')->where('id','!=',1)->get();
         return view('users.search', ['users'=> $users]);
     }
+
 
 
     public function searchresult(Request $request){
@@ -114,8 +115,8 @@ class UsersController extends Controller
         $user->username =$request->username;
         // $user->update([～で記述するとエラーがでてbioが更新できなかったため、その記述は避ける
         $user->mail =$request->mail;
-        $user->password =bcrypt($request->newpassword);
-        // ↑name属性（newpassword）に気を付ける！ddメソッドで確認！
+        $user->password =bcrypt($request->password);
+        // ↑name属性（password）に気を付ける！ddメソッドで確認！
         $user->bio =$request->bio;
 
         $user->save();
