@@ -72,7 +72,9 @@ class UsersController extends Controller
         return back();
     }
 
+
     protected function validator(array $data){
+        //プロフィール編集のバリデーション//
         return Validator::make($data, [
             'username' => 'required|string|between:2,12',
             'mail' => ['required','string','email','between:5,40',Rule::unique('users')->ignore($data['mail'],'mail'),],

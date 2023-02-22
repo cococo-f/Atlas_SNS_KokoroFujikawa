@@ -15,6 +15,15 @@
           <input type="text" name="post_content" class="form-control"
           placeholder="投稿内容を入力してください">
 
+          @if ($errors->has('post_content'))
+          <tr>
+            @foreach($errors->get('post_content') as $message)
+            <td> {{ $message }} </td>
+            @endforeach
+          </tr>
+          @endif
+
+          <!-- 投稿者の画像 -->
           @if(Auth::user()->images == 'dawn.png')
                     <img src="{{ asset('storage/icon1.png') }}" alt="AtlasSNSアイコン画像2" class="image2-post">
 
@@ -54,7 +63,13 @@
            @foreach ($posts as $post)
 
            <!-- 投稿ユーザーごとの画像表示 -->
+           @if($post->user->images == 'dawn.png')<img src="{{ asset('storage/icon1.png') }}" alt="投稿ユーザーアイコン画像" class="image7">
+
+           @else
+
            <img src="{{ asset('/storage/'.$post->user->images) }}" alt="投稿ユーザーアイコン画像" class="image7">
+            @endif
+
 
              <!-- 投稿者名の表示 -->
                    <div>{{ $post->user->username }}</div>

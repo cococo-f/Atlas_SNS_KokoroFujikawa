@@ -122,6 +122,7 @@ return [
         'password' => 'パスワード',
         'password-confirm' => 'パスワード確認',
         'iconimage' => 'アイコン画像',
+        'post_content' => '投稿内容'
     ],
 
 ];

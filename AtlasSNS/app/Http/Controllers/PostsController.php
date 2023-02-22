@@ -16,18 +16,37 @@ class PostsController extends Controller{
         // 全ての投稿を取得 //
     //  $posts = Post::get();
 
-    // 投稿者の名前を表示↓
     $posts =Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))->orWhere('user_id', Auth::user()->id)->latest()->get();
     //フォローしている人と自分の投稿//
 
+
      return view('posts.index',compact('posts'));
     }
+
+
+
+    protected function validator(array $data){
+        return Validator::make($data, [
+            'post_content' => 'required|between:1,200',
+        ]);
+}
 
     public function store(Request $request){
 
         //登録処理
         $posts= $request->post_content;
         $user_id= Auth::id();
+        $data = $request->input();
+        $validator = $this->validator($data);
+
+
+        //もしバリデーションに引っかかった場合は元の画面に戻る//
+        if($validator->fails()){
+        return redirect()->back()
+        ->withInput()
+        ->withErrors($validator);
+        }
+
         \DB::table('posts')->insert([
             'post' => $posts,
             'user_id' => $user_id  //ここでログインしているユーザidを登録
