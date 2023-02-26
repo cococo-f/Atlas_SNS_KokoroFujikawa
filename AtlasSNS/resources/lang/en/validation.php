@@ -56,7 +56,7 @@ return [
         'string'  => 'The :attribute may not be greater than :max characters.',
         'array'   => 'The :attribute may not have more than :max items.',
     ],
-    'mimes'                => ':attributeは正しい形式で入力してください。',
+    'mimes'                => ':attributeは拡張子で入力してください。',
     'mimetypes'            => 'The :attribute must be a file of type: :values.',
     'min'                  => [
         'numeric' => 'The :attribute must be at least :min.',
