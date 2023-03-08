@@ -9,6 +9,55 @@ header {
     height: 95px
 }
 
+
+
+/* main content */
+#row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#container {
+    flex: 0 0 80%;
+}
+
+#side-bar {
+    flex: 0 0 19%;
+    border-left: 1px solid #727272;
+    height: 100vw;
+}
+
+.content {
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.modal {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.modal__bg {
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+
+.modal__content {
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}
+
+
 .image1 {
     width: 105px;
     height: 40px;
@@ -23,7 +72,8 @@ header {
     margin-top: 1%;
 }
 
-/* 投稿のユーザーアイコン画像 */
+/* トップ */
+/* 投稿するユーザーアイコン画像 */
 .image2-post {
     margin-top: 20px;
     margin-left: 80px;
@@ -32,37 +82,106 @@ header {
 
 }
 
+/* 投稿者の画像・投稿フォーム・投稿ボタン共通 */
+.post-input {
+    display: flex;
+    margin: 10px 0 0 0;
+}
+
+/* 投稿フォーム */
+.form-control {
+    position: absolute;
+    padding: 0 60px 60px 0;
+    width: 50%;
+    margin: 20px 20px 0 20px;
+    line-height: 50px;
+}
+
 /* 投稿ボタン */
 .form-button {
     width: 100px;
     height: 100px;
-    margin-left: 945px;
-    margin-top: -15px;
+    margin-left: 850px;
+    margin-top: 55px;
 }
-
-
-/* 投稿フォームのレイアウト */
-.form-control {
-    position: absolute;
-    width: 50%;
-    height: 120px;
-    margin-top: 10px;
-    margin-left: 10%;
-}
-
 
 /* 区切りの線 */
 .hr1 {
     border-top: 8px solid #d3d3d3;
-    width: 81.3vw;
+    margin: 5px 0 0 0;
 }
 
-.username {
+/* 投稿一覧 */
+/* 投稿者の画像・投稿者名・投稿内容・タイムスタンプ共通 */
+.post-global {
+    display: flex;
+    margin: 10px 0px 5px 70px;
+}
+
+/* 投稿者名・投稿内容共通 */
+.post-secondary {
+    margin: 10px 60px 0 5px;
+}
+
+/* 投稿者の画像 */
+.image7 {
+    margin-left: 80px;
+    width: 50px;
+    height: 50px;
+}
+
+/* 投稿者名 */
+.post-username {
+    font-size: 17px;
+}
+
+/* 投稿内容 */
+.post-content {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* タイムスタンプ */
+.post-time {
+    margin: 0 30px 0 auto;
+}
+
+/* 投稿編集ボタン・投稿削除ボタン共通*/
+.post-tertiary {
+    margin: 0 0 0 1080px;
+}
+
+/* 投稿編集ボタン */
+.edit-btn {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 8px;
+}
+
+.edit-btn:hover {
+    filter: invert(100%);
+    transition: .4s;
+}
+
+/* 投稿削除ボタン */
+.delete-btn {
+    width: 60px;
+    height: 60px;
+}
+
+.delete-btn:hover {
+    filter: invert(100%);
+    transition: .4s;
+}
+
+/* ドロップダウンメニューのログインユーザー名 */
+.common-username {
     margin-left: 76%;
     margin-top: 32px;
     position: absolute;
     font-size: 20px;
 }
+
 
 /*アコーディオン全体*/
 .menu {
@@ -171,85 +290,233 @@ header {
     margin-top: 40px;
 }
 
-/* .login-username {
-    margin-right: 20px;
-} */
+/* サイドバー */
+.confirm {
+    margin: 20px 0 0 15px;
+}
 
+/* サイドバーのユーザー名 */
+.sideBar-username {
+    margin-bottom: 15px;
+}
 
+/* フォロー数という文字とフォロー数 */
+.sideBar-follow {
+    display: flex;
+}
+
+/* フォロー数 */
+.follow-count {
+    margin-right: 40px;
+}
+
+/* フォロワー数という文字とフォロワー数 */
+.sideBar-follower {
+    display: flex;
+}
+
+/* フォロワー数 */
+.follower-count {
+    margin-right: 25px;
+}
+
+/* フォローリストボタン */
 .follow-list_btn {
     text-decoration: none;
     color: #fff;
     background-color: #186AC9;
     width: 130px;
     text-align: center;
-    margin: 70px 0px 5px 120px;
+    margin: 20px 0px 25px 120px;
     padding: 10px;
     border-radius: 8px;
     font-size: 16px;
     z-index: 2;
 }
 
-.followlist_text {
-    font-size: 150%;
-    margin: 15px 0px 15px 70px;
-}
 
+/* フォロワーリストボタン */
 .follower-list_btn {
     text-decoration: none;
     color: #fff;
     background-color: #186AC9;
     width: 130px;
     text-align: center;
-    margin: 30px 0px 5px 120px;
+    margin: 20px 0px 5px 120px;
     padding: 10px;
     border-radius: 8px;
     font-size: 16px;
     z-index: 2;
 }
 
-.followerlist_text {
-    font-size: 150%;
-    margin: 15px 0px 15px 70px;
+/* 区切りの線 */
+.hr3 {
+    display: flex;
+    color: #000000;
+    margin-top: 40px;
 }
 
-/* ユーザー検索の青いボタン */
+/* フォロー・フォロワーリストからユーザー画像を押した先のユーザープロフィール */
+/* ユーザープロフィール画像 */
+.image4 {
+    width: 50px;
+    height: 50px;
+    margin: 30px 0 0 120px;
+}
+
+/* ユーザープロフィールのフォローするボタン */
+.follow-btn2 {
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #33bbff;
+    width: 116px;
+    height: 16px;
+    text-align: center;
+    padding: 1%;
+    border-radius: 8px;
+    font-size: 14px;
+    margin: -20px 0 30px 1050px;
+}
+
+/* ユーザープロフィールのフォロー解除ボタン */
+.unFollow-btn2 {
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #ff1a1a;
+    width: 116px;
+    height: 16px;
+    text-align: center;
+    padding: 1%;
+    border-radius: 8px;
+    font-size: 14px;
+    margin: -20px 0 30px 1050px;
+}
+
+/* ユーザープロフィールのユーザー名親要素 */
+.usersProfile-main {
+    display: flex;
+    font-size: 18px;
+    margin: -40px 0 0 200px;
+}
+
+/* ユーザープロフィールのbio親要素 */
+.usersProfile-secondary {
+    display: flex;
+    font-size: 18px;
+    margin: 30px 0 0 200px;
+}
+
+/* ユーザープロフィールのユーザー名*/
+.usersProfile-username {
+    margin: 0 0 0 80px;
+}
+
+/* ユーザープロフィールのbio */
+.usersProfile-bio {
+    margin: 0 0 0 100px;
+}
+
+
+/* プロフィール編集フォーム */
+/* プロフィール編集の親要素 */
+.profile-global {
+    display: flex;
+    margin: 60px 0 0 190px;
+}
+
+/* プロフィール項目の親要素 */
+.userProfile-input {
+    margin: 10px 0 0 80px;
+}
+
+/* プロフィール項目ごとの要素 */
+.userProfile-local {
+    display: flex;
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+/* プロフィール項目ごとの要素（エラーメッセージ含む） */
+.userProfile-primary {
+    margin-bottom: 40px;
+}
+
+
+/* ユーザーネーム、メールアドレス、パスワード、パスワード確認、自己紹介文のテキスト共通 */
+.usersProfile-common {
+    margin: 10px 0 0 0;
+}
+
+/* エラーメッセージ  */
+.errors {
+    color: #ff1a1a;
+}
+
+/* プロフィール更新ボタン */
+.usersProfile-button {
+    color: #FFFFFF;
+    background-color: #ff1a1a;
+    width: 180px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    margin: 15px 0 0 500px;
+}
+
+
+/* ユーザー検索ページへ飛ぶボタン */
 .search_btn {
     text-decoration: none;
     color: #fff;
     background-color: #186AC9;
     width: 160px;
     text-align: center;
-    margin: 80px 5px 5px 50px;
+    margin: 30px 5px 5px 50px;
     padding: 10px;
     border-radius: 8px;
     font-size: 20px;
     z-index: 2;
 }
 
+
+/* ユーザー検索 */
 /* ユーザー検索フォームのレイアウト */
-.form-group2 {
-    position: absolute;
-    margin-top: 45px;
+.form-global {
+    display: flex;
+    margin: 40px 0 0 50px;
+}
+
+/* 検索フォーム */
+.form-search {
+    width: 350px;
+    height: 50px;
+    margin-left: 5%;
+    margin-bottom: 40px;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 0 0 0 15px;
 }
 
 /* フォーム自体 */
-.form-search {
-    width: 300px;
-    height: 40px;
-    margin-left: 5%;
-    margin-bottom: 40px;
+.form-local {
+    display: flex;
 }
 
 /* ユーザー検索ボタン */
-.search-form-button {
+.form-searchButton {
     height: 45px;
+    width: 50px;
+    margin: 5px 0 0 20px;
 }
+
 
 /* 検索ワード */
 .search-word {
     font-size: 23px;
     font-weight: lighter;
-    margin-left: 25%
+    margin: 15px 0 0 210px;
 }
 
 /* フォローするボタン */
@@ -257,11 +524,12 @@ header {
     text-decoration: none;
     color: #FFFFFF;
     background-color: #33bbff;
-    width: 10%;
+    width: 120px;
+    height: 18px;
     text-align: center;
     padding: 1%;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /* フォロー解除ボタン */
@@ -269,62 +537,82 @@ header {
     text-decoration: none;
     color: #FFFFFF;
     background-color: #ff1a1a;
-    width: 10%;
+    width: 120px;
+    height: 18px;
     text-align: center;
     padding: 1%;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-/* 検索画面繰り返し処理の親要素 */
+/* フォローするボタン・フォロー解除ボタン共通 */
+.follow-btn,
+.unFollow-btn {
+    margin: -73px 0 0 400px;
+}
+
+/* ユーザー検索一覧の画像・ユーザー名・フォローする・フォロー解除ボタン共通（親要素）*/
+.search-main {
+    margin: 40px 0 0 300px;
+}
+
+/* ユーザー検索一覧の画像・ユーザー名・フォローする・フォロー解除ボタン共通（繰り返し処理の中）*/
 .search-wrapper {
     display: flex;
+    margin-top: 40px;
+
+}
+
+/* ユーザー検索一覧の画像 */
+.image10 {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 30px 60px;
+}
+
+/* ユーザー検索一覧のユーザー名 */
+.search-username {
+    font-size: 20px;
+    margin: 10px 10px 0 10px;
 }
 
 
-
-/* main content */
-#row {
+/* フォローリスト */
+/* フォローリストという文字と画像 */
+.followList-global {
     display: flex;
-    flex-flow: row wrap;
+    margin-top: 15px;
 }
 
-#container {
-    flex: 0 0 80%;
+/* フォローリストという文字 */
+.followList_text {
+    font-size: 150%;
+    margin: 15px 60px 50px 80px;
 }
 
-#side-bar {
-    flex: 0 0 19%;
-    border-left: 1px solid #727272;
-    height: 100vw;
+/* フォローリスト画像 */
+.image3 {
+    width: 50px;
+    height: 50px;
+    margin: 5px 0 0 10px;
 }
 
-.content {
-    margin: 0 auto;
-    padding: 40px;
+/* フォロワーリスト */
+/* フォローリストという文字と画像 */
+.followerList-global {
+    display: flex;
+    margin-top: 15px;
 }
 
-.modal {
-    display: none;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    width: 100%;
+/* フォロワーリストという文字 */
+.followerList_text {
+    font-size: 150%;
+    margin: 15px 60px 50px 80px;
 }
 
-.modal__bg {
-    background: rgba(0, 0, 0, 0.8);
-    height: 100vh;
-    position: absolute;
-    width: 100%;
-}
-
-.modal__content {
-    background: #fff;
-    left: 50%;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
+/* フォロワーリスト画像 */
+.image3 {
+    width: 50px;
+    height: 50px;
+    margin: 5px 0 0 10px;
 }

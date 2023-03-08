@@ -30,7 +30,7 @@ class FollowsController extends Controller
 
 
     public function followerList(){
-         $posts = Post::query()->whereIn('user_id', Auth::user()->followers()->pluck('following_id'))->latest()->get();
+        $posts = Post::query()->whereIn('user_id', Auth::user()->followers()->pluck('following_id'))->latest()->get();
          //followers→リレーションのfollowersメソッド//
 
         $user = auth()->user();//ユーザー認証

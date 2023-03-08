@@ -21,13 +21,14 @@ class UsersController extends Controller
 
     public function search(){
         // whereで条件指定し、ログインユーザー以外を取得 //
-         $users = \DB::table('users')->where('id','!=',1)->get();
-        return view('users.search', ['users'=> $users]);
+        $user = \Auth::user();
+        $user = \DB::table('users')->where('id','!=',$user->id)->get();
+        return view('users.search', ['users'=> $user]);
     }
 
 
 
-    public function searchresult(Request $request){
+    public function searchResult(Request $request){
         // 検索結果を取得 //
         $keyword = $request->input('keyword');
         // ブレードのname属性と一致しないと受け渡しができない

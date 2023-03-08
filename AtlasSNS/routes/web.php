@@ -50,7 +50,7 @@ Route::get('/profile','UsersController@profile');
 Route::get('/search','UsersController@search');
 
 // ユーザー検索結果 //
-Route::get('/searchresult','UsersController@searchresult');
+Route::get('/searchResult','UsersController@searchResult');
 
 // フォローする処理 //
 Route::get('/follow/{id}', 'UsersController@follow');
