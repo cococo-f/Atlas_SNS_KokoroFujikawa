@@ -74,6 +74,6 @@ class PostsController extends Controller{
             ->where('id', $id)
             ->delete();
 
-        return redirect('index');
+        return redirect('/top');
     }
 }
