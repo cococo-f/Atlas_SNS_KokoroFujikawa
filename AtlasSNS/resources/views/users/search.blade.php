@@ -24,9 +24,9 @@
 <div class="search-wrapper">
   <!-- ユーザーごとの画像表示 -->
   @if($user->images == 'dawn.png')
-    <img src="{{ asset('storage/icon1.png') }}" alt="検索ユーザーアイコン画像" class="image10">
+    <img src="{{ asset('images/icon1.png') }}" alt="検索ユーザーアイコン画像" class="image10">
     @else
-    <img src="{{ asset('/storage/'.$user->images) }}" alt="検索ユーザーアイコン画像" class="image10">
+    <img src="{{ asset('/images/'.$user->images) }}" alt="検索ユーザーアイコン画像" class="image10">
   @endif
   <p class="search-username">{{ $user->username }}</p>
   </div>

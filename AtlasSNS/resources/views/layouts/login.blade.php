@@ -35,10 +35,10 @@
             <p class="common-username"> {{ Auth::user()->username }} さん</p>
 
             @if(Auth::user()->images == 'dawn.png')
-                <img src="{{ asset('storage/icon1.png') }}" alt="AtlasSNSアイコン画像" class="image2">
+                <img src="{{ asset('images/icon1.png') }}" alt="AtlasSNSアイコン画像" class="image2">
 
                 @else
-                <img src="{{ asset('storage/'.Auth::user()->images) }}" alt="AtlasSNSアイコン画像" class="image2">
+                <img src="{{ asset('images/'.Auth::user()->images) }}" alt="AtlasSNSアイコン画像" class="image2">
             @endif
             </label>
 

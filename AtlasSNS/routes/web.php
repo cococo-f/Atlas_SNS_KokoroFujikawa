@@ -37,8 +37,8 @@ Route::post('/added', 'Auth\RegisterController@added');
 Route::get('/logout', 'Auth\LoginController@logout');
 
 
-//ログイン中のページ
 
+//ログイン中のページ
 
 // ログイン中のユーザーのみ閲覧可能なページの設定 //
 Route::group(['middleware' => 'auth'], function() {
@@ -57,7 +57,6 @@ Route::get('/follow/{id}', 'UsersController@follow');
 
 // フォロー解除処理 //
 Route::get('/unFollow/{id}', 'UsersController@unFollow');
-
 
 // フォローリスト //
 Route::get('/follow-list','FollowsController@followList');

@@ -3,9 +3,9 @@
 <!-- クリックした他ユーザーのプロフィール表示 -->
 <div class="usersProfile-global">
   @if($user->images == 'dawn.png')
-    <img src="{{ asset('storage/icon1.png') }}" alt="検索ユーザーアイコン画像" class="image4">
+    <img src="{{ asset('images/icon1.png') }}" alt="検索ユーザーアイコン画像" class="image4">
     @else
-    <img src="{{ asset('/storage/'.$user->images) }}" alt="他ユーザーアイコン画像" class="image4">
+    <img src="{{ asset('/images/'.$user->images) }}" alt="他ユーザーアイコン画像" class="image4">
   @endif
   <div class ="usersProfile-main">
     <p> name </p>
@@ -32,9 +32,9 @@
   <div class= "post-global">
     <!-- 投稿ユーザーごとの画像表示 -->
     @if($user->images == 'dawn.png')
-      <img src="{{ asset('storage/icon1.png') }}" alt="検索ユーザーアイコン画像" class="image7">
+      <img src="{{ asset('images/icon1.png') }}" alt="検索ユーザーアイコン画像" class="image7">
       @else
-      <img src="{{ asset('/storage/'.$post->user->images) }}" alt="他ユーザー投稿アイコン画像" class="image7">
+      <img src="{{ asset('/images/'.$post->user->images) }}" alt="他ユーザー投稿アイコン画像" class="image7">
     @endif
 
     <div class="post-secondary">

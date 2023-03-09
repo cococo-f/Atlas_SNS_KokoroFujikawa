@@ -7,9 +7,9 @@
 <div class="post-input">
   <!-- 投稿者の画像 -->
   @if(Auth::user()->images == 'dawn.png')
-  <img src="{{ asset('storage/icon1.png') }}" alt="AtlasSNSアイコン画像2" class="image2-post">
+  <img src="{{ asset('images/icon1.png') }}" alt="AtlasSNSアイコン画像2" class="image2-post">
   @else
-  <img src="{{ asset('storage/'.Auth::user()->images) }}" alt="AtlasSNSアイコン画像2" class="image2-post">
+  <img src="{{ asset('images/'.Auth::user()->images) }}" alt="AtlasSNSアイコン画像2" class="image2-post">
   @endif
 
 <!-- 投稿フォーム -->
@@ -49,9 +49,9 @@
     <div class= "post-global">
     <!-- 投稿ユーザーごとの画像表示 -->
       @if($post->user->images == 'dawn.png')
-        <img src="{{ asset('storage/icon1.png') }}" alt="投稿ユーザーアイコン画像" class="image7">
+        <img src="{{ asset('images/icon1.png') }}" alt="投稿ユーザーアイコン画像" class="image7">
         @else
-        <img src="{{ asset('/storage/'.$post->user->images) }}" alt="投稿ユーザーアイコン画像" class="image7">
+        <img src="{{ asset('/images/'.$post->user->images) }}" alt="投稿ユーザーアイコン画像" class="image7">
       @endif
 
       <div class="post-secondary">

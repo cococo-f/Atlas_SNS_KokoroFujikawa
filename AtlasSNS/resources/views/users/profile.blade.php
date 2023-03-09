@@ -6,9 +6,9 @@
 
 <div class="profile-icon">
   @if(Auth::user()->images == 'dawn.png')
-  <img src="{{ asset('storage/icon1.png') }}" alt="AtlasSNSアイコン画像3" class="image2">
+  <img src="{{ asset('images/icon1.png') }}" alt="AtlasSNSアイコン画像3" class="image2">
   @else
-  <img src="{{ asset('storage/'.Auth::user()->images) }}" alt="AtlasSNSアイコン画像3" class="image2">
+  <img src="{{ asset('images/'.Auth::user()->images) }}" alt="AtlasSNSアイコン画像3" class="image2">
   @endif
 </div>
 
