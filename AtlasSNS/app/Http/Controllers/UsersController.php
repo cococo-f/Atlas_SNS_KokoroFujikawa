@@ -44,7 +44,8 @@ class UsersController extends Controller
         // 第二引数：LIKEそのまま
         // 第三引数：検索ワード（部分一致）
 
-        $users = $query->get();
+        $user = \Auth::user();
+        $users = $query->where('id','!=',$user->id)->get();
         // 検索に引っかかった人だけを変数に入れている
 
         return view('users.search', compact('keyword','users'));
